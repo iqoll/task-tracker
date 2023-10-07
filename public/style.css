@@ -1,0 +1,41 @@
+/* Color:
+  dark, #373b54
+  light, #009ddd
+*/
+body {
+	margin: 0;
+	background: #f1f1f1;
+}
+header {
+	background: #373b54;
+	color: #009ddd;
+}
+h2 {
+	margin: 0 auto;
+	padding: 10px;
+	font-size: 2rem;
+}
+main {
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	gap: 100px;
+}
+
+/* new task form */
+.new-item-form {
+	margin-top: 20px;
+	padding: 10px;
+	margin-right: 30px;
+}
+
+label,
+input {
+	display: block;
+}
+
+input {
+	padding: 6px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	width: 100%;
+}

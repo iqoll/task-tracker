@@ -7,9 +7,41 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div>
+  <header>
     <h2>Task Tracker</h2>
-  </div>
+  </header>
+
+  <main>
+    <!-- Task List -->
+    <ul class="task-list">
+
+    </ul>
+
+    <!-- Task Form -->
+    <div class="task-form">
+      <form class="new-item-form">
+        <h3>Add a new task</h3>
+
+        <div class="field">
+          <label>Task</label>
+          <input type="text" id="tasktext">
+        </div>
+        <div class="field">
+          <label>Day</label>
+          <input type="text" id="taskday">
+        </div>
+        <div class="field">
+          <label>Reminder</label>
+          <input type="checkbox" id="reminder">
+        </div>
+        <button>Add</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <a target="_blank" href="https://github.com/iqoll">Github</a>
+  </footer>
 
   <script type="module" src="app.js"></script>
 </body>
