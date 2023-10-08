@@ -21,6 +21,48 @@ main {
 	gap: 100px;
 }
 
+.task-details {
+	background: #fff;
+	border-radius: 4px;
+	margin: 20px auto;
+	padding: 20px;
+	position: relative;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.task-details h4 {
+	margin: 0 0 10px 0;
+	font-size: 1.2em;
+	color: #009ddd;
+}
+
+.task-details p {
+	margin: 0;
+	font-size: 0.9em;
+	color: #555;
+}
+.task-details span {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+	background: #f1f1f1;
+	padding: 6px;
+	border-radius: 50%;
+	color: #333;
+}
+
+.task-details .reminder-icon {
+	position: absolute;
+	top: 20px;
+	right: 70px;
+	cursor: pointer;
+	background: #f1f1f1;
+	padding: 6px;
+	border-radius: 50%;
+	color: #333;
+}
+
 /* new task form */
 .new-item-form {
 	margin-top: 20px;
@@ -33,9 +75,23 @@ input {
 	display: block;
 }
 
-input {
+input[type='text'] {
 	padding: 6px;
 	margin-top: 10px;
 	margin-bottom: 20px;
 	width: 100%;
+}
+
+input[type='checkbox'] {
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+button {
+	background: #373b54;
+	border: 0;
+	color: #009ddd;
+	padding: 10px;
+	border-radius: 4px;
+	cursor: pointer;
 }

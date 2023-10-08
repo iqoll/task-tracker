@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Task Tracker</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 <body>
   <header>
@@ -14,7 +15,12 @@
   <main>
     <!-- Task List -->
     <ul class="task-list">
-
+      <div class="task-details">
+        <h4>Task title</h4>
+        <p><strong>Day task:</strong></p>
+        <span class="material-symbols-outlined">delete</span>
+        <span class="material-symbols-outlined reminder-icon">alarm</span>
+      </div>
     </ul>
 
     <!-- Task Form -->
@@ -34,7 +40,7 @@
           <label>Reminder</label>
           <input type="checkbox" id="reminder">
         </div>
-        <button>Add</button>
+        <button>Add Task</button>
       </form>
     </div>
   </main>
