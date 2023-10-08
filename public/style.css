@@ -21,6 +21,10 @@ main {
 	gap: 100px;
 }
 
+ul {
+	list-style-type: none;
+}
+
 .task-details {
 	background: #fff;
 	border-radius: 4px;

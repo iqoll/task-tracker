@@ -5,6 +5,6 @@ export class Task {
         this.reminder = reminder;
     }
     format() {
-        return `Need to do ${this.task} due at ${this.day}`;
+        return `Need to do ${this.task} at ${this.day}`;
     }
 }
