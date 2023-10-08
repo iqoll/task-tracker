@@ -17,7 +17,6 @@ form.addEventListener('submit', (e) => {
     list.render(doc, taskText.value, reminder.checked, taskDay.value);
 });
 // Delete a task
-const deleteButtons = document.querySelectorAll('.delete-icon');
 ul === null || ul === void 0 ? void 0 : ul.addEventListener('click', (e) => {
     const target = e.target;
     if (target.classList.contains('delete-icon')) {
