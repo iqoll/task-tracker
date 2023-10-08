@@ -16,3 +16,15 @@ form.addEventListener('submit', (e) => {
     doc = new Task(...values);
     list.render(doc, taskText.value, reminder.checked, taskDay.value);
 });
+// Delete a task
+const deleteButtons = document.querySelectorAll('.delete-icon');
+ul === null || ul === void 0 ? void 0 : ul.addEventListener('click', (e) => {
+    const target = e.target;
+    if (target.classList.contains('delete-icon')) {
+        // find the parent element if there is a button
+        const listItem = target.closest('.task-details');
+        if (listItem) {
+            listItem.remove();
+        }
+    }
+});

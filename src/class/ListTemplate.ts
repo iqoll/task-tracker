@@ -38,7 +38,7 @@ export class ListTemplate {
     editIcon.innerText = 'edit'
 
     const deleteIcon = document.createElement('span')
-    deleteIcon.classList.add('material-symbols-outlined')
+    deleteIcon.classList.add('material-symbols-outlined', 'delete-icon')
     deleteIcon.innerText = 'delete'
 
     li.append(editIcon)

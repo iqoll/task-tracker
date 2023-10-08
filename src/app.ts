@@ -25,3 +25,17 @@ form.addEventListener('submit', (e: Event) => {
   doc = new Task(...values)
   list.render(doc, taskText.value, reminder.checked, taskDay.value)
 })
+
+// Delete a task
+const deleteButtons = document.querySelectorAll('.delete-icon')
+
+ul?.addEventListener('click', (e) => {
+  const target = e.target as HTMLElement
+  if(target.classList.contains('delete-icon')) {
+    // find the parent element if there is a button
+    const listItem = target.closest('.task-details')
+    if(listItem) {
+      listItem.remove()
+    }
+  }
+})

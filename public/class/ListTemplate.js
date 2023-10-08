@@ -28,7 +28,7 @@ export class ListTemplate {
         editIcon.classList.add('material-symbols-outlined', 'edit-icon');
         editIcon.innerText = 'edit';
         const deleteIcon = document.createElement('span');
-        deleteIcon.classList.add('material-symbols-outlined');
+        deleteIcon.classList.add('material-symbols-outlined', 'delete-icon');
         deleteIcon.innerText = 'delete';
         li.append(editIcon);
         li.append(deleteIcon);
