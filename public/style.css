@@ -46,7 +46,7 @@ main {
 	top: 20px;
 	right: 20px;
 	cursor: pointer;
-	background: #f1f1f1;
+	background: #ff8776;
 	padding: 6px;
 	border-radius: 50%;
 	color: #333;
@@ -55,9 +55,20 @@ main {
 .task-details .reminder-icon {
 	position: absolute;
 	top: 20px;
+	right: 115px;
+	cursor: pointer;
+	background: #fff380;
+	padding: 6px;
+	border-radius: 50%;
+	color: #333;
+}
+
+.task-details .edit-icon {
+	position: absolute;
+	top: 20px;
 	right: 70px;
 	cursor: pointer;
-	background: #f1f1f1;
+	background: #009ddd;
 	padding: 6px;
 	border-radius: 50%;
 	color: #333;
@@ -94,4 +105,10 @@ button {
 	padding: 10px;
 	border-radius: 4px;
 	cursor: pointer;
+}
+
+footer {
+	margin-top: 32px;
+	max-width: 1400px;
+	text-align: center;
 }
