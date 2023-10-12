@@ -1,6 +1,5 @@
 import { ListTemplate } from "./class/ListTemplate.js"
 import { Task } from "./class/Task.js"
-import { HasFormatter } from "./interface/HasFormatter.js"
 
 const form = document.querySelector('form')!
 
@@ -13,22 +12,54 @@ const reminder = document.querySelector('#reminder') as HTMLInputElement
 const ul = document.querySelector('ul')!
 const list = new ListTemplate(ul)
 
+
+// Generate Id
+let generateUniqueId: Function
+
+generateUniqueId = () => {
+  const id = 'itd' + Math.floor(Math.random() * 100)
+  return id
+}
+
+// Load tasks from localStorage on page load
+const tasks : Task[] = loadTasks()
+tasks.forEach((task) => {
+  list.render(task.task, task.reminder, task.day)
+})
+
+// Save to localStorage
+let saveTasks : Function
+
+saveTasks = () => {
+  localStorage.setItem('tasks', JSON.stringify(tasks))
+}
+
+// Load Task
+function loadTasks(): Task[] {
+  const taskJSON = localStorage.getItem('tasks')
+  if(taskJSON) {
+    return JSON.parse(taskJSON)
+  } else {
+    return []
+  }
+}
+
 form.addEventListener('submit', (e: Event) => {
   e.preventDefault()
 
-  let doc: HasFormatter
+  let doc: Task
 
-  let values: [string, string, boolean]
+  let values: [string, string, string, boolean]
   
-  values = [taskText.value, taskDay.value, reminder.checked]
+  values = [generateUniqueId() ,taskText.value, taskDay.value, reminder.checked]
 
   doc = new Task(...values)
-  list.render(doc, taskText.value, reminder.checked, taskDay.value)
+  tasks.push(doc)
+  saveTasks()
+  list.render(taskText.value, reminder.checked, taskDay.value)
 })
 
 // Delete a task
-const deleteButtons = document.querySelectorAll('.delete-icon')
-
 ul?.addEventListener('click', (e) => {
   const target = e.target as HTMLElement
   if(target.classList.contains('delete-icon')) {
@@ -39,3 +70,4 @@ ul?.addEventListener('click', (e) => {
     }
   }
 })
+

@@ -1,9 +1,7 @@
-import { HasFormatter } from "../interface/HasFormatter";
-
 export class ListTemplate {
   constructor(private container: HTMLUListElement){}
 
-  render(item: HasFormatter, heading: string, reminder: true | false, day: string) {
+  render(heading: string, reminder: true | false, day: string) {
     const li = document.createElement('li')
     li.classList.add('task-details')
 
@@ -23,7 +21,7 @@ export class ListTemplate {
     li.append(p)
 
     const p2 = document.createElement('p')
-    p2.innerText = item.format()
+    p2.innerText = `Need to do ${heading} at ${day}`
     li.append(p2)
 
     if(reminder) {
@@ -38,7 +36,7 @@ export class ListTemplate {
     editIcon.innerText = 'edit'
 
     const deleteIcon = document.createElement('span')
-    deleteIcon.classList.add('material-symbols-outlined', 'delete-icon')
+    deleteIcon.classList.add('material-symbols-outlined', 'delete')
     deleteIcon.innerText = 'delete'
 
     li.append(editIcon)

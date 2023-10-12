@@ -1,5 +1,6 @@
 export class Task {
-    constructor(task, day, reminder) {
+    constructor(id, task, day, reminder) {
+        this.id = id;
         this.task = task;
         this.day = day;
         this.reminder = reminder;

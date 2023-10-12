@@ -1,7 +1,7 @@
-import { HasFormatter } from "../interface/HasFormatter";
 
-export class Task  implements HasFormatter{
+export class Task {
   constructor(
+    public id: string,
     public task: string,
     public day: string,
     public reminder: boolean

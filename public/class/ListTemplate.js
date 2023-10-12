@@ -2,7 +2,7 @@ export class ListTemplate {
     constructor(container) {
         this.container = container;
     }
-    render(item, heading, reminder, day) {
+    render(heading, reminder, day) {
         const li = document.createElement('li');
         li.classList.add('task-details');
         const h4 = document.createElement('h4');
@@ -16,7 +16,7 @@ export class ListTemplate {
         p.appendChild(dayText);
         li.append(p);
         const p2 = document.createElement('p');
-        p2.innerText = item.format();
+        p2.innerText = `Need to do ${heading} at ${day}`;
         li.append(p2);
         if (reminder) {
             const spanReminder = document.createElement('span');
@@ -28,7 +28,7 @@ export class ListTemplate {
         editIcon.classList.add('material-symbols-outlined', 'edit-icon');
         editIcon.innerText = 'edit';
         const deleteIcon = document.createElement('span');
-        deleteIcon.classList.add('material-symbols-outlined', 'delete-icon');
+        deleteIcon.classList.add('material-symbols-outlined', 'delete');
         deleteIcon.innerText = 'delete';
         li.append(editIcon);
         li.append(deleteIcon);
