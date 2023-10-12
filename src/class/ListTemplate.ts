@@ -1,9 +1,12 @@
+import { Task } from "./Task"
+
 export class ListTemplate {
   constructor(private container: HTMLUListElement){}
 
-  render(heading: string, reminder: true | false, day: string) {
+  render(item: Task, heading: string, reminder: true | false, day: string) {
     const li = document.createElement('li')
     li.classList.add('task-details')
+    li.setAttribute(`data-task-id`, item.id)
 
     const h4 = document.createElement('h4')
     h4.innerText = heading
@@ -36,7 +39,7 @@ export class ListTemplate {
     editIcon.innerText = 'edit'
 
     const deleteIcon = document.createElement('span')
-    deleteIcon.classList.add('material-symbols-outlined', 'delete')
+    deleteIcon.classList.add('material-symbols-outlined', 'delete-icon')
     deleteIcon.innerText = 'delete'
 
     li.append(editIcon)

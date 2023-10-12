@@ -17,7 +17,7 @@ generateUniqueId = () => {
 // Load tasks from localStorage on page load
 const tasks = loadTasks();
 tasks.forEach((task) => {
-    list.render(task.task, task.reminder, task.day);
+    list.render(task, task.task, task.reminder, task.day);
 });
 // Save to localStorage
 let saveTasks;
@@ -42,7 +42,7 @@ form.addEventListener('submit', (e) => {
     doc = new Task(...values);
     tasks.push(doc);
     saveTasks();
-    list.render(taskText.value, reminder.checked, taskDay.value);
+    list.render(doc, taskText.value, reminder.checked, taskDay.value);
 });
 // Delete a task
 ul === null || ul === void 0 ? void 0 : ul.addEventListener('click', (e) => {
@@ -51,7 +51,17 @@ ul === null || ul === void 0 ? void 0 : ul.addEventListener('click', (e) => {
         // find the parent element if there is a button
         const listItem = target.closest('.task-details');
         if (listItem) {
+            // Remove the task from the DOM
             listItem.remove();
+            // Find the task in tasks array by some unique id
+            const taskId = listItem.getAttribute('data-task-id');
+            const taskIndex = tasks.findIndex((task) => task.id === taskId);
+            if (taskIndex !== -1) {
+                // Remove the task from tasks array
+                tasks.splice(taskIndex, 1);
+                // Update localStorage
+                saveTasks();
+            }
         }
     }
 });

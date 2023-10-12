@@ -2,9 +2,10 @@ export class ListTemplate {
     constructor(container) {
         this.container = container;
     }
-    render(heading, reminder, day) {
+    render(item, heading, reminder, day) {
         const li = document.createElement('li');
         li.classList.add('task-details');
+        li.setAttribute(`data-task-id`, item.id);
         const h4 = document.createElement('h4');
         h4.innerText = heading;
         li.append(h4);
@@ -28,7 +29,7 @@ export class ListTemplate {
         editIcon.classList.add('material-symbols-outlined', 'edit-icon');
         editIcon.innerText = 'edit';
         const deleteIcon = document.createElement('span');
-        deleteIcon.classList.add('material-symbols-outlined', 'delete');
+        deleteIcon.classList.add('material-symbols-outlined', 'delete-icon');
         deleteIcon.innerText = 'delete';
         li.append(editIcon);
         li.append(deleteIcon);
