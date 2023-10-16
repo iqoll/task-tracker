@@ -118,7 +118,7 @@ footer {
 }
 /* Modal Styles */
 .modal {
-	display: none; //Initially hidden
+	display: none;
 	position: fixed;
 	top: 50;
 	left: 0;

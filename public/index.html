@@ -15,14 +15,14 @@
   <main>
     <!-- Task List -->
     <ul class="task-list">
-      <div class="task-details">
+      <li class="task-details">
         <h4>Laundry</h4>
         <p><strong>Due Day:</strong>Tuesday</p>
         <p>Need to do Laundry at Tuesday</p>
         <span class="material-symbols-outlined delete-icon">delete</span>
         <span class="material-symbols-outlined reminder-icon">alarm</span>
         <span class="material-symbols-outlined edit-icon">edit</span>
-      </div>
+      </li>
     </ul>
 
     <!-- Task Form -->
@@ -54,7 +54,7 @@
     <div class="modal">
       <div class="modal-content">
         <h2>Edit Task</h2>
-        <form class="edit-item-form">
+        <form class="edit-task-form">
           <div class="field">
             <label>Task</label>
             <input type="text" id="edit-tasktext">
@@ -68,7 +68,7 @@
             <input type="checkbox" id="edit-reminder">
           </div>
           <button type="submit">Save changes</button>
-          <button id="cancelEdit">Cancel</button>
+          <button id="cancelEdit" type="button">Cancel</button>
         </form>
       </div>
     </div>
